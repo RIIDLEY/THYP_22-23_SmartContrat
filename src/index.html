@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/web3.js-browser/build/web3.min.js"></script>
+</head>
+
+<body>
+
+    <div id="accounts">
+
+    </div>
+
+    <div id="Diplomes">
+
+    </div>
+
+    <script>
+        let accounts = document.getElementById('accounts');
+        let diplomes = document.getElementById('Diplomes');
+
+        const init = async () => {
+            let web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+            web3.eth.getAccounts().then(function (allAccounts) {
+                for (let i = 0; i < allAccounts.length; i++) {
+                    accounts.innerHTML += allAccounts[i] + '<br/>';
+                }
+            });
+
+            let contract = web3.eth.Contract([{ "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "string", "name": "_EtudiantName", "type": "string" }, { "indexed": false, "internalType": "string", "name": "_DiplomeName", "type": "string" }], "name": "DiplomeAdd", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "string", "name": "_EtudiantName", "type": "string" }], "name": "EtudiantCreated", "type": "event" }, { "anonymous": false, "inputs": [{ "components": [{ "internalType": "string", "name": "diplomeName", "type": "string" }, { "internalType": "string", "name": "dateObtention", "type": "string" }, { "internalType": "string", "name": "etablissement", "type": "string" }], "indexed": false, "internalType": "struct DiplomeManager.Diplome[]", "name": "_Diplomes", "type": "tuple[]" }], "name": "getDiplomes", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "Etudiants", "outputs": [{ "internalType": "string", "name": "_EtudiantName", "type": "string" }], "stateMutability": "view", "type": "function", "constant": true }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }, { "internalType": "string", "name": "_EtudiantName", "type": "string" }], "name": "createEtudiant", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }, { "internalType": "string", "name": "_diplomeName", "type": "string" }, { "internalType": "string", "name": "_dateObtention", "type": "string" }, { "internalType": "string", "name": "_etablissement", "type": "string" }], "name": "addDiplome", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }], "name": "getDiplomesEtudiant", "outputs": [], "stateMutability": "nonpayable", "type": "function" }], "0xa68C1aBc658E9A2Dc8E93EA82B351310CbdF475B");
+
+            async function setDiplomes() {
+                //contract.methods.createEtudiant('0xEFE21674b37E6a8A9f5753894860CFd5257956D6',"Lahoucine").send({ from:"0xD2eC904B316EaA9A97105105753Aca832F0B6feC" });
+                //contract.methods.addDiplome('0xEFE21674b37E6a8A9f5753894860CFd5257956D6', 'Diplome 1', '2021', 'Ecole 1').send({ from:"0xD2eC904B316EaA9A97105105753Aca832F0B6feC" });
+            }
+
+            async function getDiplomes() {
+                let result = await contract.methods.getDiplomes().call().then(receipt => {
+                    diplomes.innerHTML = receipt;
+                })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
+
+            setDiplomes();
+            getDiplomes();
+        }
+
+
+
+
+        init();
+
+    </script>
+</body>
+
+</html>

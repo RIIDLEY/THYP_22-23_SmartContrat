@@ -15,7 +15,6 @@ contract DiplomeManager {
     string dateObtention;
     string etablissement;
     // string adresse;
-    // string signature;
   }
 
   struct Etudiant{

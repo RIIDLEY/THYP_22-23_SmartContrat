@@ -12,7 +12,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -28,9 +29,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getFavoriteNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_favoriteNumber\",\"type\":\"uint256\"}],\"name\":\"setFavoriteNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FavoriteNumber.sol\":\"FavoriteNumber\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/FavoriteNumber.sol\":{\"keccak256\":\"0x9e815ea818aaa53180cbc47a1600add486e63ff9c271c3c6d532a9341bd42142\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7049ab65405db2e4dcadfbaba33b115bacf62ef101b5fcb7bba42e86e69fa19b\",\"dweb:/ipfs/QmbZUo2D8MfUo8d3vsWDKuvFPaPeyyqTMKP84RKnCsciiK\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610150806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80638ec042321461003b578063a621d15e14610057575b600080fd5b610055600480360381019061005091906100c3565b610075565b005b61005f61007f565b60405161006c91906100ff565b60405180910390f35b8060008190555050565b60008054905090565b600080fd5b6000819050919050565b6100a08161008d565b81146100ab57600080fd5b50565b6000813590506100bd81610097565b92915050565b6000602082840312156100d9576100d8610088565b5b60006100e7848285016100ae565b91505092915050565b6100f98161008d565b82525050565b600060208201905061011460008301846100f0565b9291505056fea26469706673582212205e624f4f2bac1ff5e9068b2e6f0af4fbf233e92b3a1c32dd9ea45899cf42d5e564736f6c63430008090033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80638ec042321461003b578063a621d15e14610057575b600080fd5b610055600480360381019061005091906100c3565b610075565b005b61005f61007f565b60405161006c91906100ff565b60405180910390f35b8060008190555050565b60008054905090565b600080fd5b6000819050919050565b6100a08161008d565b81146100ab57600080fd5b50565b6000813590506100bd81610097565b92915050565b6000602082840312156100d9576100d8610088565b5b60006100e7848285016100ae565b91505092915050565b6100f98161008d565b82525050565b600060208201905061011460008301846100f0565b9291505056fea26469706673582212205e624f4f2bac1ff5e9068b2e6f0af4fbf233e92b3a1c32dd9ea45899cf42d5e564736f6c63430008090033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getFavoriteNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_favoriteNumber\",\"type\":\"uint256\"}],\"name\":\"setFavoriteNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FavoriteNumber.sol\":\"FavoriteNumber\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/FavoriteNumber.sol\":{\"keccak256\":\"0xe41da089c6830d1f2acfb4daa313d780f85e1d203cd7acd2d523521f8e6fa7be\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://de630955afce147457dbf6b55feea16566fdfeaa954877f3f7c4d329ef012d0a\",\"dweb:/ipfs/QmNy3cDbRJQ36fFrZsF4gtGs9VpRBYVhA31EcjSGgusGCF\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610150806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80638ec042321461003b578063a621d15e14610057575b600080fd5b610055600480360381019061005091906100c3565b610075565b005b61005f61007f565b60405161006c91906100ff565b60405180910390f35b8060008190555050565b60008054905090565b600080fd5b6000819050919050565b6100a08161008d565b81146100ab57600080fd5b50565b6000813590506100bd81610097565b92915050565b6000602082840312156100d9576100d8610088565b5b60006100e7848285016100ae565b91505092915050565b6100f98161008d565b82525050565b600060208201905061011460008301846100f0565b9291505056fea2646970667358221220807030571c1ebd39f6d4d9a03260a5f51aac696a380828c59a91589013631e3864736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80638ec042321461003b578063a621d15e14610057575b600080fd5b610055600480360381019061005091906100c3565b610075565b005b61005f61007f565b60405161006c91906100ff565b60405180910390f35b8060008190555050565b60008054905090565b600080fd5b6000819050919050565b6100a08161008d565b81146100ab57600080fd5b50565b6000813590506100bd81610097565b92915050565b6000602082840312156100d9576100d8610088565b5b60006100e7848285016100ae565b91505092915050565b6100f98161008d565b82525050565b600060208201905061011460008301846100f0565b9291505056fea2646970667358221220807030571c1ebd39f6d4d9a03260a5f51aac696a380828c59a91589013631e3864736f6c63430008090033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [
@@ -739,10 +740,10 @@
       "name": "#utility.yul"
     }
   ],
-  "sourceMap": "66:254:1:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "66:254:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;214:101;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;120:90;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;214:101;295:15;278:14;:32;;;;214:101;:::o;120:90::-;172:4;191:14;;184:21;;120:90;:::o;88:117:2:-;197:1;194;187:12;334:77;371:7;400:5;389:16;;334:77;;;:::o;417:122::-;490:24;508:5;490:24;:::i;:::-;483:5;480:35;470:63;;529:1;526;519:12;470:63;417:122;:::o;545:139::-;591:5;629:6;616:20;607:29;;645:33;672:5;645:33;:::i;:::-;545:139;;;;:::o;690:329::-;749:6;798:2;786:9;777:7;773:23;769:32;766:119;;;804:79;;:::i;:::-;766:119;924:1;949:53;994:7;985:6;974:9;970:22;949:53;:::i;:::-;939:63;;895:117;690:329;;;;:::o;1025:118::-;1112:24;1130:5;1112:24;:::i;:::-;1107:3;1100:37;1025:118;;:::o;1149:222::-;1242:4;1280:2;1269:9;1265:18;1257:26;;1293:71;1361:1;1350:9;1346:17;1337:6;1293:71;:::i;:::-;1149:222;;;;:::o",
-  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract FavoriteNumber {\n\n  uint favoriteNumber;\n\n\n  function getFavoriteNumber() external view returns (uint) {\n    return favoriteNumber;\n  }\n\n  function setFavoriteNumber(uint _favoriteNumber) external {\n    favoriteNumber = _favoriteNumber;\n  }\n\n\n\n}\n",
-  "sourcePath": "C:\\Users\\hamse\\Desktop\\GitHub\\THYP_22-23_SmartContrat\\contracts\\FavoriteNumber.sol",
+  "sourceMap": "60:269:1:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "60:269:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;217:103;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;119:92;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;217:103;299:15;282:14;:32;;;;217:103;:::o;119:92::-;171:4;191:14;;184:21;;119:92;:::o;88:117:2:-;197:1;194;187:12;334:77;371:7;400:5;389:16;;334:77;;;:::o;417:122::-;490:24;508:5;490:24;:::i;:::-;483:5;480:35;470:63;;529:1;526;519:12;470:63;417:122;:::o;545:139::-;591:5;629:6;616:20;607:29;;645:33;672:5;645:33;:::i;:::-;545:139;;;;:::o;690:329::-;749:6;798:2;786:9;777:7;773:23;769:32;766:119;;;804:79;;:::i;:::-;766:119;924:1;949:53;994:7;985:6;974:9;970:22;949:53;:::i;:::-;939:63;;895:117;690:329;;;;:::o;1025:118::-;1112:24;1130:5;1112:24;:::i;:::-;1107:3;1100:37;1025:118;;:::o;1149:222::-;1242:4;1280:2;1269:9;1265:18;1257:26;;1293:71;1361:1;1350:9;1346:17;1337:6;1293:71;:::i;:::-;1149:222;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.9;\r\n\r\ncontract FavoriteNumber {\r\n\r\n  uint favoriteNumber;\r\n\r\n\r\n  function getFavoriteNumber() external view returns (uint) {\r\n    return favoriteNumber;\r\n  }\r\n\r\n  function setFavoriteNumber(uint _favoriteNumber) external {\r\n    favoriteNumber = _favoriteNumber;\r\n  }\r\n\r\n\r\n\r\n}\r\n",
+  "sourcePath": "c:\\Users\\hamse\\Desktop\\GitHub\\THYP_22-23_SmartContrat\\contracts\\FavoriteNumber.sol",
   "ast": {
     "absolutePath": "project:/contracts/FavoriteNumber.sol",
     "exportedSymbols": {
@@ -758,15 +759,12 @@
         "id": 163,
         "literals": [
           "solidity",
-          ">=",
-          "0.4",
-          ".22",
-          "<",
-          "0.9",
-          ".0"
+          "^",
+          "0.8",
+          ".9"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:32:1"
+        "src": "33:23:1"
       },
       {
         "abstract": false,
@@ -780,7 +778,7 @@
           184
         ],
         "name": "FavoriteNumber",
-        "nameLocation": "75:14:1",
+        "nameLocation": "69:14:1",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
@@ -788,10 +786,10 @@
             "id": 165,
             "mutability": "mutable",
             "name": "favoriteNumber",
-            "nameLocation": "100:14:1",
+            "nameLocation": "96:14:1",
             "nodeType": "VariableDeclaration",
             "scope": 184,
-            "src": "95:19:1",
+            "src": "91:19:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -802,7 +800,7 @@
               "id": 164,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "95:4:1",
+              "src": "91:4:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -814,7 +812,7 @@
             "body": {
               "id": 172,
               "nodeType": "Block",
-              "src": "178:32:1",
+              "src": "177:34:1",
               "statements": [
                 {
                   "expression": {
@@ -842,13 +840,13 @@
             "kind": "function",
             "modifiers": [],
             "name": "getFavoriteNumber",
-            "nameLocation": "129:17:1",
+            "nameLocation": "128:17:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 166,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "146:2:1"
+              "src": "145:2:1"
             },
             "returnParameters": {
               "id": 169,
@@ -862,7 +860,7 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 173,
-                  "src": "172:4:1",
+                  "src": "171:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -873,7 +871,7 @@
                     "id": 167,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "172:4:1",
+                    "src": "171:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -882,10 +880,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "171:6:1"
+              "src": "170:6:1"
             },
             "scope": 184,
-            "src": "120:90:1",
+            "src": "119:92:1",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -894,7 +892,7 @@
             "body": {
               "id": 182,
               "nodeType": "Block",
-              "src": "272:43:1",
+              "src": "275:45:1",
               "statements": [
                 {
                   "expression": {
@@ -909,7 +907,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 165,
-                      "src": "278:14:1",
+                      "src": "282:14:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -923,13 +921,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 175,
-                      "src": "295:15:1",
+                      "src": "299:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "278:32:1",
+                    "src": "282:32:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -937,7 +935,7 @@
                   },
                   "id": 181,
                   "nodeType": "ExpressionStatement",
-                  "src": "278:32:1"
+                  "src": "282:32:1"
                 }
               ]
             },
@@ -947,7 +945,7 @@
             "kind": "function",
             "modifiers": [],
             "name": "setFavoriteNumber",
-            "nameLocation": "223:17:1",
+            "nameLocation": "226:17:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 176,
@@ -958,10 +956,10 @@
                   "id": 175,
                   "mutability": "mutable",
                   "name": "_favoriteNumber",
-                  "nameLocation": "246:15:1",
+                  "nameLocation": "249:15:1",
                   "nodeType": "VariableDeclaration",
                   "scope": 183,
-                  "src": "241:20:1",
+                  "src": "244:20:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -972,7 +970,7 @@
                     "id": 174,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "241:4:1",
+                    "src": "244:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -981,27 +979,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "240:22:1"
+              "src": "243:22:1"
             },
             "returnParameters": {
               "id": 177,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "272:0:1"
+              "src": "275:0:1"
             },
             "scope": 184,
-            "src": "214:101:1",
+            "src": "217:103:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
         "scope": 185,
-        "src": "66:254:1",
+        "src": "60:269:1",
         "usedErrors": []
       }
     ],
-    "src": "32:289:1"
+    "src": "33:298:1"
   },
   "compiler": {
     "name": "solc",
@@ -1011,12 +1009,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xD9a0220052FEf48b78e6a49614ed75B997b94dC7",
-      "transactionHash": "0x962985f1a6e29fa082c1582d79510839217927bd2fc0e80a2a02585b4f98e2e4"
+      "address": "0x9B2e52064573Dc1103D9663756650C8c290730c7",
+      "transactionHash": "0xbf895adbae62d6bc147dbfe9e2b3bef92012fadec35978be29d26a6fa3852b8d"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-12T09:53:13.819Z",
+  "updatedAt": "2022-11-21T09:52:43.695Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

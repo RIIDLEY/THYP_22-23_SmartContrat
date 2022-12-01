@@ -7,52 +7,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="node_modules/web3.js-browser/build/web3.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <body>
-
-    <div class="row g-3">
-        <div class="col">
-            <div id="accounts">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html" id="upload">Accueil</a>
             </div>
         </div>
-        <div class="col">
-            <!-- formulaire création étudiant -->
-            <form action="">
-                <input type="text" id="addrETH" placeholder="adresse ETH">
-                <input type="text" id="nom" placeholder="nom">
-                <input type="text" id="prenom" placeholder="prenom">
-                <input type="text" id="email" placeholder="email">
-                <button type="button" onclick="createEtudiant()">Créer étudiant</button>
-            </form>
+    </nav>
+
+    <!-- liste accound -->
+    <div class="grandeDivData container">
+        <u>
+            <h2>Liste des compts disponibles :</h2>
+        </u>
+        <div id="accounts">
         </div>
-        <div class="col">
-            <!-- formulaire création diplome -->
+    </div>
 
-            <form action="">
-                <input type="text" id="addrETHDip" placeholder="adresse ETH">
-                <input type="text" id="diplomeName" placeholder="nom du diplome">
-                <input type="text" id="dateObtention" placeholder="annee du diplome">
-                <input type="text" id="mention" placeholder="mention du diplome">
-                <input type="text" id="etablissement" placeholder="etablissement du diplome">
-                <button type="button" onclick="createDiplome()">Créer diplome</button>
-            </form>
-        </div>
+    <!-- formulaire création étudiant -->
+    <div class="grandeDivData container">
+        <form action="">
+            <div class="row" style="padding: 2%">
+                <div class="col-md-6">
+                    <input type="text" id="addrETH" class="form-control" placeholder="adresse ETH"
+                        style="margin: 10px;">
+                    <input type="text" id="nom" class="form-control" placeholder="nom" style="margin: 10px;">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="prenom" class="form-control" placeholder="prenom" style="margin: 10px;">
+                    <input type="text" id="email" class="form-control" placeholder="email" style="margin: 10px;">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg" onclick="createEtudiant()">Créer étudiant</button>
+        </form>
+    </div>
 
-        <div class="col">
-            <!-- Diplome d'un etudiant -->
 
-            <form action="">
-                <input type="text" id="addrETHDipEtudiant" placeholder="adresse ETH">
-                <button type="button" onclick="getDiplomeEtudiant()">Diplome de l'étudiant</button>
+    <!-- formulaire création diplome -->
+    <div class="grandeDivData container">
+        <form action="">
+            <div class="row" style="padding: 2%">
+                <div class="col-md-6">
+                    <input type="text" id="addrETHDip" class="form-control" placeholder="adresse ETH"
+                        style="margin: 10px;">
+                    <input type="text" id="diplomeName" class="form-control" placeholder="nom du diplome"
+                        style="margin: 10px;">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="dateObtention" class="form-control" placeholder="annee du diplome"
+                        style="margin: 10px;">
+                    <input type="text" id="mention" class="form-control" placeholder="mention du diplome"
+                        style="margin: 10px;">
+                    <input type="text" id="etablissement" class="form-control" placeholder="etablissement du diplome"
+                        style="margin: 10px;">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg" onclick="createDiplome()">Créer diplome</button>
+        </form>
+    </div>
 
-                <br>
-                <div id="DipAccount"></div>
 
-            </form>
-        </div>
+    <!-- Diplome d'un etudiant -->
+    <div class="grandeDivData container">
+
+        <form action="">
+
+            <div class="row" style="padding: 2%">
+                <div class="col-md-6">
+                    <input type="text" id="addrETHDipEtudiant" class="form-control" placeholder="adresse ETH">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg" onclick="getDiplomeEtudiant()">Diplome de
+                l'étudiant</button>
+            <br>
+            <div id="DipAccount"></div>
+
+        </form>
     </div>
 
 
@@ -63,13 +100,13 @@
         const hexToDecimal = hex => parseInt(hex, 16);
 
         let web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
-        let contract = web3.eth.Contract([{ "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "string", "name": "_EtudiantName", "type": "string" }, { "indexed": false, "internalType": "string", "name": "_DiplomeName", "type": "string" }], "name": "DiplomeAdd", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "string", "name": "_EtudiantName", "type": "string" }], "name": "EtudiantCreated", "type": "event" }, { "anonymous": false, "inputs": [{ "components": [{ "internalType": "string", "name": "diplomeName", "type": "string" }, { "internalType": "string", "name": "dateObtention", "type": "string" }, { "internalType": "string", "name": "etablissement", "type": "string" }, { "internalType": "string", "name": "mention", "type": "string" }], "indexed": false, "internalType": "struct DiplomeManager.Diplome[]", "name": "_Diplomes", "type": "tuple[]" }], "name": "getDiplomes", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "Etudiants", "outputs": [{ "internalType": "string", "name": "_EtudiantName", "type": "string" }, { "internalType": "string", "name": "_EtudiantLastName", "type": "string" }, { "internalType": "string", "name": "_EtudiantEmail", "type": "string" }, { "internalType": "address", "name": "_EtudiantAddress", "type": "address" }], "stateMutability": "view", "type": "function", "constant": true }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }, { "internalType": "string", "name": "_EtudiantName", "type": "string" }, { "internalType": "string", "name": "_EtudiantLastName", "type": "string" }, { "internalType": "string", "name": "_EtudiantEmail", "type": "string" }], "name": "createEtudiant", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }, { "internalType": "string", "name": "_diplomeName", "type": "string" }, { "internalType": "string", "name": "_dateObtention", "type": "string" }, { "internalType": "string", "name": "_etablissement", "type": "string" }, { "internalType": "string", "name": "_mention", "type": "string" }], "name": "addDiplome", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }], "name": "getEtudiantsByAddress", "outputs": [{ "components": [{ "internalType": "string", "name": "_EtudiantName", "type": "string" }, { "internalType": "string", "name": "_EtudiantLastName", "type": "string" }, { "internalType": "string", "name": "_EtudiantEmail", "type": "string" }, { "internalType": "address", "name": "_EtudiantAddress", "type": "address" }, { "components": [{ "internalType": "string", "name": "diplomeName", "type": "string" }, { "internalType": "string", "name": "dateObtention", "type": "string" }, { "internalType": "string", "name": "etablissement", "type": "string" }, { "internalType": "string", "name": "mention", "type": "string" }], "internalType": "struct DiplomeManager.Diplome[]", "name": "_Diplomes", "type": "tuple[]" }], "internalType": "struct DiplomeManager.Etudiant", "name": "", "type": "tuple" }], "stateMutability": "view", "type": "function", "constant": true }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }], "name": "getDiplomesEtudiantLength", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function", "constant": true }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }, { "internalType": "uint256", "name": "nbDip", "type": "uint256" }], "name": "getDiplomesEtudiant", "outputs": [{ "components": [{ "internalType": "string", "name": "diplomeName", "type": "string" }, { "internalType": "string", "name": "dateObtention", "type": "string" }, { "internalType": "string", "name": "etablissement", "type": "string" }, { "internalType": "string", "name": "mention", "type": "string" }], "internalType": "struct DiplomeManager.Diplome", "name": "", "type": "tuple" }], "stateMutability": "view", "type": "function", "constant": true }, { "inputs": [{ "internalType": "address", "name": "_EtudiantAddress", "type": "address" }], "name": "getAllDiplomes", "outputs": [{ "components": [{ "internalType": "string", "name": "diplomeName", "type": "string" }, { "internalType": "string", "name": "dateObtention", "type": "string" }, { "internalType": "string", "name": "etablissement", "type": "string" }, { "internalType": "string", "name": "mention", "type": "string" }], "internalType": "struct DiplomeManager.Diplome[]", "name": "", "type": "tuple[]" }], "stateMutability": "view", "type": "function", "constant": true }], "0x4379E8f4869797229F46a8310b5919417032c089");
+        let contract = web3.eth.Contract([{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"string","name":"_EtudiantName","type":"string"},{"indexed":false,"internalType":"string","name":"_DiplomeName","type":"string"}],"name":"DiplomeAdd","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"string","name":"_EtudiantName","type":"string"}],"name":"EtudiantCreated","type":"event"},{"anonymous":false,"inputs":[{"components":[{"internalType":"string","name":"diplomeName","type":"string"},{"internalType":"string","name":"dateObtention","type":"string"},{"internalType":"string","name":"etablissement","type":"string"},{"internalType":"string","name":"mention","type":"string"}],"indexed":false,"internalType":"struct DiplomeManager.Diplome[]","name":"_Diplomes","type":"tuple[]"}],"name":"getDiplomes","type":"event"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"Etudiants","outputs":[{"internalType":"string","name":"_EtudiantName","type":"string"},{"internalType":"string","name":"_EtudiantLastName","type":"string"},{"internalType":"string","name":"_EtudiantEmail","type":"string"},{"internalType":"address","name":"_EtudiantAddress","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_EtudiantAddress","type":"address"},{"internalType":"string","name":"_EtudiantName","type":"string"},{"internalType":"string","name":"_EtudiantLastName","type":"string"},{"internalType":"string","name":"_EtudiantEmail","type":"string"}],"name":"createEtudiant","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_EtudiantAddress","type":"address"},{"internalType":"string","name":"_diplomeName","type":"string"},{"internalType":"string","name":"_dateObtention","type":"string"},{"internalType":"string","name":"_etablissement","type":"string"},{"internalType":"string","name":"_mention","type":"string"}],"name":"addDiplome","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_EtudiantAddress","type":"address"}],"name":"getEtudiantsByAddress","outputs":[{"components":[{"internalType":"string","name":"_EtudiantName","type":"string"},{"internalType":"string","name":"_EtudiantLastName","type":"string"},{"internalType":"string","name":"_EtudiantEmail","type":"string"},{"internalType":"address","name":"_EtudiantAddress","type":"address"},{"components":[{"internalType":"string","name":"diplomeName","type":"string"},{"internalType":"string","name":"dateObtention","type":"string"},{"internalType":"string","name":"etablissement","type":"string"},{"internalType":"string","name":"mention","type":"string"}],"internalType":"struct DiplomeManager.Diplome[]","name":"_Diplomes","type":"tuple[]"}],"internalType":"struct DiplomeManager.Etudiant","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_EtudiantAddress","type":"address"}],"name":"getDiplomesEtudiantLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_EtudiantAddress","type":"address"},{"internalType":"uint256","name":"nbDip","type":"uint256"}],"name":"getDiplomesEtudiant","outputs":[{"components":[{"internalType":"string","name":"diplomeName","type":"string"},{"internalType":"string","name":"dateObtention","type":"string"},{"internalType":"string","name":"etablissement","type":"string"},{"internalType":"string","name":"mention","type":"string"}],"internalType":"struct DiplomeManager.Diplome","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_EtudiantAddress","type":"address"}],"name":"getAllDiplomes","outputs":[{"components":[{"internalType":"string","name":"diplomeName","type":"string"},{"internalType":"string","name":"dateObtention","type":"string"},{"internalType":"string","name":"etablissement","type":"string"},{"internalType":"string","name":"mention","type":"string"}],"internalType":"struct DiplomeManager.Diplome[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"}], "0x907e25510D4c371b604BA4aC69E53865796A497F");
 
         web3.eth.getAccounts().then(function (allAccounts) {
-                for (let i = 0; i < allAccounts.length; i++) {
-                    accounts.innerHTML += allAccounts[i] + '<br/>';
-                }
-            });
+            for (let i = 0; i < allAccounts.length; i++) {
+                accounts.innerHTML += allAccounts[i] + '<br/>';
+            }
+        });
 
 
         function createEtudiant() {
@@ -112,7 +149,7 @@
             contract.methods.getAllDiplomes(addrETH).call()
                 .then(function (Diplomes) {
                     for (let i = 0; i < Diplomes.length; i++) {
-                        DipAccount.innerHTML += Diplomes[i].diplomeName + " " + Diplomes[i].dateObtention + " " + Diplomes[i].mention + " " + Diplomes[i].etablissement + '<br/>';   
+                        DipAccount.innerHTML += Diplomes[i].diplomeName + " " + Diplomes[i].dateObtention + " " + Diplomes[i].mention + " " + Diplomes[i].etablissement + '<br/>';
                     }
                 })
         }

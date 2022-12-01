@@ -44,7 +44,7 @@ contract DiplomeManager {
     Etudiants[_EtudiantAddress]._EtudiantEmail = _EtudiantEmail;
     Etudiants[_EtudiantAddress]._EtudiantAddress = _EtudiantAddress;
     mapSize++;
-    return "Done";
+    emit EtudiantCreated(_EtudiantName);
   }
 
   function addDiplome(address _EtudiantAddress, string memory _diplomeName, string memory _dateObtention, string memory _etablissement, string memory _mention) external{

@@ -11,12 +11,18 @@ contract DiplomeManager {
     string diplomeName;
     string dateObtention;
     string etablissement;
+    string mention;
   }
 
   struct Etudiant{
     string _EtudiantName;
+    string _EtudiantLastName;
+    string _EtudiantEmail;
+    address _EtudiantAddress;
     Diplome[] _Diplomes;
   }
+
+  uint mapSize;
 
   mapping(address => Etudiant) public Etudiants;
 
@@ -31,30 +37,40 @@ contract DiplomeManager {
     _;
   }
 
-  function createEtudiant(address _EtudiantAddress, string memory _EtudiantName) external {
+  function createEtudiant(address _EtudiantAddress, string memory _EtudiantName, string memory _EtudiantLastName, string memory _EtudiantEmail) external returns (string memory) {
     require(bytes(Etudiants[_EtudiantAddress]._EtudiantName).length == 0, "L'etudiant existe deja");
     Etudiants[_EtudiantAddress]._EtudiantName = _EtudiantName;
-    emit EtudiantCreated(_EtudiantName);
+    Etudiants[_EtudiantAddress]._EtudiantLastName = _EtudiantLastName;
+    Etudiants[_EtudiantAddress]._EtudiantEmail = _EtudiantEmail;
+    Etudiants[_EtudiantAddress]._EtudiantAddress = _EtudiantAddress;
+    mapSize++;
+    return "Done";
   }
 
-  function addDiplome(address _EtudiantAddress, string memory _diplomeName, string memory _dateObtention, string memory _etablissement) external{
+  function addDiplome(address _EtudiantAddress, string memory _diplomeName, string memory _dateObtention, string memory _etablissement, string memory _mention) external{
       require(bytes(Etudiants[_EtudiantAddress]._EtudiantName).length > 0, "L'etudiant n'existe pas");
-      Diplome memory newDiplome = Diplome(_diplomeName, _dateObtention, _etablissement);
+      Diplome memory newDiplome = Diplome(_diplomeName, _dateObtention, _etablissement,_mention);
       Etudiants[_EtudiantAddress]._Diplomes.push(newDiplome);
       emit DiplomeAdd(Etudiants[_EtudiantAddress]._EtudiantName, _diplomeName);
   }
 
   //---------------------------------- GETTERS ----------------------------------//
 
+  function getEtudiantsByAddress(address _EtudiantAddress) external view returns (Etudiant memory) {
+    return Etudiants[_EtudiantAddress];
+  }
+
   function getDiplomesEtudiantLength(address _EtudiantAddress) external view returns (uint){
     return Etudiants[_EtudiantAddress]._Diplomes.length;
   }
 
-   function getDiplomesEtudiant(address _EtudiantAddress, uint nbDip) external view returns (string memory){
-    return Etudiants[_EtudiantAddress]._Diplomes[nbDip].diplomeName;
+   function getDiplomesEtudiant(address _EtudiantAddress, uint nbDip) external view returns (Diplome memory){
+    return Etudiants[_EtudiantAddress]._Diplomes[nbDip];
   }
 
-  function getEtudiant(address _EtudiantAddress) external view returns (string memory) {
-    return Etudiants[_EtudiantAddress]._EtudiantName;
+  function getAllDiplomes(address _EtudiantAddress) external view returns (Diplome[] memory){
+    return Etudiants[_EtudiantAddress]._Diplomes;
   }
+
+
 }

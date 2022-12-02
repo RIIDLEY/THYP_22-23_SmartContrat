@@ -10,18 +10,15 @@
 <https://jardindesconnaissances.univ-paris8.fr/onto/jdc#> a owl:Ontology ;
     dcterms:title "Diplomes" .
 
-jdc:Etablissement a rdfs:Class ;
-    rdfs:label "Etablissement" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
-
-jdc:Localisation a rdfs:Class ;
-    rdfs:label "Localisation" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
 
 jdc:Diplome a rdfs:Class ;
     rdfs:label "Diplome" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+
+jdc:Etablissement a rdfs:Class ;
+    rdfs:label "Etablissement" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
@@ -31,14 +28,72 @@ jdc:Etudiant a rdfs:Class ;
     vs:term_status "experimental" .
 
 #--------------------------------------------
+jdc:Intitule a rdf:Property ;
+    rdfs:label "Intitulé du diplome" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
 
 jdc:Description a rdf:Property ;
     rdfs:label "Description" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
+jdc:Etablissement a rdf:Property ;
+    rdfs:label "Etablissement" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+jdc:Date_Delivrance a rdf:Property ;
+    rdfs:label "Date de délivrance" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
 jdc:Niveau_RNCP a rdf:Property ;
     rdfs:label "Niveau RNCP" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+#--------------------------------------------
+
+jdc:Adresse a rdf:Property ;
+    rdfs:label "Adresse" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+jdc:Academie a rdf:Property ;
+    rdfs:label "Academie" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+#--------------------------------------------
+
+jdc:Nom a rdf:Property ;
+    rdfs:label "Nom" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+jdc:Prenom a rdf:Property ;
+    rdfs:label "Prénom" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+jdc:Date_de_naissance a rdf:Property ;
+    rdfs:label "Date de naissance" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+jdc:Adresse a rdf:Property ;
+    rdfs:label "Adresse" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+jdc:Telephone a rdf:Property ;
+    rdfs:label "Téléphone" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+jdc:Email a rdf:Property ;
+    rdfs:label "Email" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 

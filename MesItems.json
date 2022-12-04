@@ -1,0 +1,257 @@
+[
+    {
+        "@context": "http:\/\/localhost\/omeka\/api-context",
+        "@id": "http:\/\/localhost\/omeka\/api\/items\/3",
+        "@type": [
+            "o:Item",
+            "jdc:Etudiant"
+        ],
+        "o:id": 3,
+        "o:is_public": true,
+        "o:owner": {
+            "@id": "http:\/\/localhost\/omeka\/api\/users\/1",
+            "o:id": 1
+        },
+        "o:resource_class": {
+            "@id": "http:\/\/localhost\/omeka\/api\/resource_classes\/124",
+            "o:id": 124
+        },
+        "o:resource_template": {
+            "@id": "http:\/\/localhost\/omeka\/api\/resource_templates\/4",
+            "o:id": 4
+        },
+        "o:thumbnail": null,
+        "o:title": "Lahoucine HAMSEK",
+        "thumbnail_display_urls": {
+            "large": null,
+            "medium": null,
+            "square": null
+        },
+        "o:created": {
+            "@value": "2022-12-02T14:07:36+00:00",
+            "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+        },
+        "o:modified": {
+            "@value": "2022-12-02T14:08:42+00:00",
+            "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+        },
+        "o:media": [],
+        "o:item_set": [],
+        "o:site": [],
+        "jdc:Nom": [
+            {
+                "type": "literal",
+                "property_id": 224,
+                "property_label": "Nom",
+                "is_public": true,
+                "@value": "Hamsek"
+            }
+        ],
+        "jdc:Prenom": [
+            {
+                "type": "literal",
+                "property_id": 225,
+                "property_label": "Pr\u00e9nom",
+                "is_public": true,
+                "@value": "Lahoucine"
+            }
+        ],
+        "jdc:Date_de_naissance": [
+            {
+                "type": "literal",
+                "property_id": 226,
+                "property_label": "Date de naissance",
+                "is_public": true,
+                "@value": "16\/08\/2000"
+            }
+        ],
+        "jdc:Adresse": [
+            {
+                "type": "literal",
+                "property_id": 222,
+                "property_label": "Adresse",
+                "is_public": true,
+                "@value": "16 Rue maurice berteaux"
+            }
+        ],
+        "jdc:Telephone": [
+            {
+                "type": "literal",
+                "property_id": 227,
+                "property_label": "T\u00e9l\u00e9phone",
+                "is_public": true,
+                "@value": "0667898"
+            }
+        ],
+        "jdc:Email": [
+            {
+                "type": "literal",
+                "property_id": 228,
+                "property_label": "Email",
+                "is_public": true,
+                "@value": "hamsek.lahoucine"
+            }
+        ],
+        "dcterms:title": [
+            {
+                "type": "literal",
+                "property_id": 1,
+                "property_label": "Title",
+                "is_public": true,
+                "@value": "Lahoucine HAMSEK"
+            }
+        ]
+    },
+    {
+        "@context": "http:\/\/localhost\/omeka\/api-context",
+        "@id": "http:\/\/localhost\/omeka\/api\/items\/5",
+        "@type": [
+            "o:Item",
+            "jdc:Etablissement"
+        ],
+        "o:id": 5,
+        "o:is_public": true,
+        "o:owner": {
+            "@id": "http:\/\/localhost\/omeka\/api\/users\/1",
+            "o:id": 1
+        },
+        "o:resource_class": {
+            "@id": "http:\/\/localhost\/omeka\/api\/resource_classes\/123",
+            "o:id": 123
+        },
+        "o:resource_template": {
+            "@id": "http:\/\/localhost\/omeka\/api\/resource_templates\/5",
+            "o:id": 5
+        },
+        "o:thumbnail": null,
+        "o:title": "Universite Paris 8",
+        "thumbnail_display_urls": {
+            "large": null,
+            "medium": null,
+            "square": null
+        },
+        "o:created": {
+            "@value": "2022-12-04T14:09:39+00:00",
+            "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+        },
+        "o:modified": {
+            "@value": "2022-12-04T14:09:39+00:00",
+            "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+        },
+        "o:media": [],
+        "o:item_set": [],
+        "o:site": [],
+        "dcterms:title": [
+            {
+                "type": "literal",
+                "property_id": 1,
+                "property_label": "Title",
+                "is_public": true,
+                "@value": "Universite Paris 8"
+            }
+        ],
+        "jdc:Adresse": [
+            {
+                "type": "literal",
+                "property_id": 222,
+                "property_label": "Adresse",
+                "is_public": true,
+                "@value": "2 Rue de la Libert\u00e9, 93200 Saint-Denis"
+            }
+        ],
+        "jdc:Academie": [
+            {
+                "type": "literal",
+                "property_id": 223,
+                "property_label": "Academie",
+                "is_public": true,
+                "@value": "Certeil"
+            }
+        ]
+    },
+    {
+        "@context": "http:\/\/localhost\/omeka\/api-context",
+        "@id": "http:\/\/localhost\/omeka\/api\/items\/6",
+        "@type": [
+            "o:Item",
+            "jdc:Diplome"
+        ],
+        "o:id": 6,
+        "o:is_public": true,
+        "o:owner": {
+            "@id": "http:\/\/localhost\/omeka\/api\/users\/1",
+            "o:id": 1
+        },
+        "o:resource_class": {
+            "@id": "http:\/\/localhost\/omeka\/api\/resource_classes\/122",
+            "o:id": 122
+        },
+        "o:resource_template": {
+            "@id": "http:\/\/localhost\/omeka\/api\/resource_templates\/6",
+            "o:id": 6
+        },
+        "o:thumbnail": null,
+        "o:title": "Master 2 THYP",
+        "thumbnail_display_urls": {
+            "large": null,
+            "medium": null,
+            "square": null
+        },
+        "o:created": {
+            "@value": "2022-12-04T14:10:52+00:00",
+            "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+        },
+        "o:modified": {
+            "@value": "2022-12-04T14:11:27+00:00",
+            "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+        },
+        "o:media": [],
+        "o:item_set": [],
+        "o:site": [],
+        "jdc:Intitule": [
+            {
+                "type": "literal",
+                "property_id": 217,
+                "property_label": "Intitul\u00e9 du diplome",
+                "is_public": true,
+                "@value": "Master 2 THYP"
+            }
+        ],
+        "jdc:Etablissement": [
+            {
+                "type": "literal",
+                "property_id": 219,
+                "property_label": "Etablissement",
+                "is_public": true,
+                "@value": "Universite Paris 8"
+            }
+        ],
+        "jdc:Date_Delivrance": [
+            {
+                "type": "literal",
+                "property_id": 220,
+                "property_label": "Date de d\u00e9livrance",
+                "is_public": true,
+                "@value": "01\/09\/2023"
+            }
+        ],
+        "jdc:Niveau_RNCP": [
+            {
+                "type": "literal",
+                "property_id": 221,
+                "property_label": "Niveau RNCP",
+                "is_public": true,
+                "@value": "Niveau 7"
+            }
+        ],
+        "dcterms:title": [
+            {
+                "type": "literal",
+                "property_id": 1,
+                "property_label": "Title",
+                "is_public": true,
+                "@value": "Master 2 THYP"
+            }
+        ]
+    }
+]
